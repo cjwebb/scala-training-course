@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Y HALO THAR WURLD</title>
+
+		<link rel="stylesheet" href="../revealjs-stuff/css/reveal.css">
+		<link rel="stylesheet" href="../revealjs-stuff/css/theme/black.css">
+		<link rel="stylesheet" href="../revealjs-stuff/lib/css/zenburn.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown>
+                  <script type="text/template">
+                  # Intro 
+
+                  - Easy to follow, easy to teach
+                  - Build things to demonstrate what we’ve learnt
+                  - This is the essentials
+                  - Links for further reading will be provided
+                  </script>
+                </section>
+
+                <section>
+                <pre><code class="scala" data-trim data-noescape> 
+object HelloWorld {
+
+  def main(args: Array[String]) {
+    println("Hello, World")
+  }
+  
+}
+                </code></pre>
+                </section>
+                <section>
+                <pre><code class="scala" data-trim data-noescape> 
+object HelloWorld {
+
+  // public static void main(String[] args) 
+  def main(args: Array[String]) {
+    println("Hello, World")
+  }
+  
+}
+                </code></pre>
+                </section>
+			</div>
+		</div>
+
+		<script src="../revealjs-stuff/lib/js/head.min.js"></script>
+		<script src="../revealjs-stuff/js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize({
+				history: true,
+				dependencies: [
+					{ src: '../revealjs-stuff/plugin/markdown/marked.js' },
+					{ src: '../revealjs-stuff/plugin/markdown/markdown.js' },
+					{ src: '../revealjs-stuff/plugin/notes/notes.js', async: true },
+					{ src: '../revealjs-stuff/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
