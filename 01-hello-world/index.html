@@ -25,7 +25,7 @@
                 </section>
 
                 <section>
-                <pre><code class="scala" data-trim data-noescape> 
+                <pre><code class="scala" data-trim data-noescape>
 object HelloWorld {
 
   def main(args: Array[String]) {
@@ -36,18 +36,95 @@ object HelloWorld {
                 </code></pre>
                 </section>
                 <section>
-                <pre><code class="scala" data-trim data-noescape> 
+                <pre><code class="scala" data-trim data-noescape>
 object HelloWorld {
 
-  // public static void main(String[] args) 
   def main(args: Array[String]) {
-    println("Hello, World")
+    def sayHello(name: String) = println("Hello, " + name)
+    sayHello(args(0))
   }
   
 }
                 </code></pre>
                 </section>
-			</div>
+                <section>
+                <pre><code class="scala" data-trim data-noescape>
+case class Product(name: String, price: BigDecimal)
+
+val p = Product("Black Shoes", 300.00)
+                </code></pre>
+                <p>VS</p>
+                <pre><code class="scala" data-trim data-noescape>
+class Product(val name: String, val price: BigDecimal)
+
+val p = new Product("Black Shoes", 300.00)
+                </code></pre>
+                </section>
+                <section>
+                <h1>Exercise 1</h1>
+<p>println your responses!</p>
+                <pre><code class="scala" data-trim data-noescape>
+case class Product(name: String, price: BigDecimal)
+
+val blackShoes          = Product("Black Shoes", 300.00)
+val expensiveWhiteShoes = Product("White Shoes", 125.00)
+val cheapWhiteShoes     = Product("White Shoes", 5.00)
+
+class ProductChooser {
+  def chooseProduct(p: Product) {
+    println("I will go barefoot, rather than wear these")
+  }
+}
+
+                </code></pre>
+<p>If they're black shoes, you will buy them</p>
+<p>If they're white, but £5 or less, then you'll buy them grudgingly</p>
+
+                </section>
+                <section>
+                <pre><code class="scala" data-trim data-noescape>
+
+product match {
+  case Product(name, price) =>
+    println(name + " is a bargain at " + price)
+}
+
+                </code></pre>
+                </section>
+                <section>
+                <pre><code class="scala" data-trim data-noescape>
+
+product match {
+  case Product(name, price) if price > 100 =>
+    println(name + " costs way too much")
+
+  case Product(name, price) =>
+    println(name + " is a bargain at " + price)
+}
+
+                </code></pre>
+                </section>
+                <section>
+                <pre><code class="scala" data-trim data-noescape>
+
+product match {
+  case Product(name, price) if price > 100 =>
+    println(name + " costs way too much")
+
+  case Product("Black Shoes", _) =>
+    println("I'll pay anything for Black Shoes!")
+
+  case Product(name, price) =>
+    println(name + " is a bargain at " + price)
+}
+
+                </code></pre>
+                </section>
+                <section>
+                <h1>Exercise 2</h1>
+                <p>Change your chooseProduct method to use a match statement</p>
+                </section>
+            </div> <!-- end of slides -->
 		</div>
 
 		<script src="../revealjs-stuff/lib/js/head.min.js"></script>
@@ -55,6 +132,7 @@ object HelloWorld {
 
 		<script>
 			Reveal.initialize({
+                slideNumber: true,
 				history: true,
 				dependencies: [
 					{ src: '../revealjs-stuff/plugin/markdown/marked.js' },
