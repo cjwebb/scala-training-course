@@ -85,8 +85,8 @@ class ProductChooser {
                 <pre><code class="scala" data-trim data-noescape>
 
 product match {
-  case Product(name, price) =>
-    println(name + " is a bargain at " + price)
+  case Product(n, p) =>
+    println(n + " is a bargain at " + p)
 }
 
                 </code></pre>
@@ -95,11 +95,11 @@ product match {
                 <pre><code class="scala" data-trim data-noescape>
 
 product match {
-  case Product(name, price) if price > 100 =>
-    println(name + " costs way too much")
+  case Product(n, p) if p > 100 =>
+    println(n + " costs way too much")
 
-  case Product(name, price) =>
-    println(name + " is a bargain at " + price)
+  case Product(n, p) =>
+    println(n + " is a bargain at " + p)
 }
 
                 </code></pre>
@@ -108,14 +108,14 @@ product match {
                 <pre><code class="scala" data-trim data-noescape>
 
 product match {
-  case Product(name, price) if price > 100 =>
-    println(name + " costs way too much")
+  case Product(n, p) if p > 100 =>
+    println(n + " costs way too much")
 
   case Product("Black Shoes", _) =>
     println("I'll pay anything for Black Shoes!")
 
-  case Product(name, price) =>
-    println(name + " is a bargain at " + price)
+  case Product(n, p) =>
+    println(n + " is a bargain at " + p)
 }
 
                 </code></pre>

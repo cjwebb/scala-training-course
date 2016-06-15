@@ -47,9 +47,29 @@ This section is mainly for teacher notes. They're located in this handy README s
 
 #### 5. Exercise 1
 
- - Time to code!
+ - Time to code! Checkout this repo, run SBT in this directory. Change code in src/main/scala.
  - We have a case class, and a few instances of it.
  - We have a class, with a method.
  - Code up the rules, so when you pass each case class to the method, it behaves appropriately.
  - Use an if statements.
+
+#### 6
+
+ - You don't actually need if-statements! Match statements provide more power, and are often easier to read.
+ - name and price are destructured to n and p, and usuable only in the scope of the statement after the arrow.
+ - For this example, match is superfluous.
+
+#### 7
+
+ - Match statements can have guard clauses via `if`.
+ - Match statements are tried in order. All combinations must be included in a match statement, or your code will throw a `scala.MatchError`.
+
+#### 8
+
+ - The middle clause now only matches if the name equals "Black Shoes", and the underscore represents that we don't care about the price.
+ - You can also do OR statements in a match case.
+
+#### 9. Exercise 2
+
+ - Use match statements. Watch out for MatchErrors.
 
